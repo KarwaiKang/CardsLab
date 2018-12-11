@@ -25,6 +25,37 @@ public class Card {
     }
 
     public String toString() {
-        return "Rank: " + rank + ", Suit: " + suit;
+        String out = "";
+        switch (rank) {
+            case "Ace":
+                out += "A";
+                break;
+            case "Jack":
+                out += "J";
+                break;
+            case "Queen":
+                out += "Q";
+                break;
+            case "King":
+                out += "K";
+                break;
+            default:
+                out += pointValue;
+        }
+        switch (suit) {
+            case "Spades":
+                out += " ♠";
+                break;
+            case "Clubs":
+                out += " ♣";
+                break;
+            case "Hearts":
+                out += " ♥";
+                break;
+            case "Diamonds":
+                out += " ♦";
+                break;
+        }
+        return out + "「" + rank + " of " + suit + "」";
     }
 }
